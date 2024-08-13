@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
-import BottomNav from "@/components/BottomNav"
+import Sidebar from "@/components/Sidebar"
 
 export const metadata: Metadata = {
   title: "Wrott",
@@ -17,8 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-pretendard">
-        <main className="w-full h-full">{children}</main>
-        <BottomNav />
+        <Sidebar />
+        <main className="pl-72 w-full h-full">{children}</main>
       </body>
     </html>
   )
