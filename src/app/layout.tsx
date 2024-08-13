@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import "./globals.css"
+import BottomNav from "@/components/BottomNav"
 
 export const metadata: Metadata = {
   title: "Wrott",
@@ -15,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-pretendard">{children}</body>
+      <body className="font-pretendard">
+        <main className="w-full h-full">{children}</main>
+        <BottomNav />
+      </body>
     </html>
   )
 }
