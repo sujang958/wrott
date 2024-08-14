@@ -6,13 +6,19 @@ export default function Home() {
   return (
     <Container>
       <p className="text-4xl font-bold">탐색하기</p>
-      <div className="flex flex-row items-center gap-x-3 mt-6">
-        <div className="relative w-full">
-          <Search size={17} className="stroke-neutral-700 absolute left-2 top-1/2 -translate-y-1/2" /><input type="text" name="" id="" className="w-full bg-neutral-200 rounded-lg border-0 pl-8 pr-3 py-1" placeholder="검색하기" />
-        </div>
 
-        <Image src="/cat.jpg" alt="pfp" width={64} height={64} className="rounded-full h-8 w-8" />
-      </div>
+      <section className="mt-8">
+        <p className="text-xl font-semibold">인기있는 글</p>
+        <div className="flex flex-row items-center justify-start mt-4 gap-x-4">
+          <div className="cursor-pointer">
+            <Image src="/cover.png" width={1024 * 0.14} height={1401 * 0.14} alt="cover" className="object-contain rounded-lg" draggable={false} />
+
+            <p className="text-sm text-neutral-400 mt-3.5">에로티시즘</p>
+            <p className="text-lg font-semibold">롤리타</p>
+            <p className="text-sm text-neutral-400 mt-0.5">블라디미르 지음</p>
+          </div>
+        </div>
+      </section>
 
     </Container>
   )
