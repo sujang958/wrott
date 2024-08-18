@@ -24,15 +24,15 @@ export default function RootLayout({
           <Panel
             className="p-0 h-screen"
             collapsedSize={10}
-            minSize={20}
+            minSize={15}
             maxSize={30}
             collapsible
-            defaultSize={25}
+            defaultSize={20}
           >
             <Sidebar />
           </Panel>
           <PanelResizeHandle className="p-1 hover:bg-neutral-200" />
-          <Panel className="w-full">
+          <Panel className="w-full" defaultSize={80}>
             <main className="w-full h-full">{children}</main>
           </Panel>
         </PanelGroup>
