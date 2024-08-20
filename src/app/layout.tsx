@@ -32,7 +32,7 @@ export default function RootLayout({
             <Sidebar />
           </Panel>
           <PanelResizeHandle className="p-1 hover:bg-neutral-200" />
-          <Panel className="w-full" defaultSize={80}>
+          <Panel className="w-full" defaultSize={75}>
             <main className="w-full h-full">{children}</main>
           </Panel>
         </PanelGroup>
