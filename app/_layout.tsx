@@ -1,39 +1,37 @@
-import { Feather, Ionicons } from "@expo/vector-icons"
-import { Tabs } from "expo-router"
-import { ComponentProps, FC } from "react"
-import { View } from "react-native-reanimated/lib/typescript/Animated"
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { useFonts } from 'expo-font';
+import { Stack } from 'expo-router';
+import * as SplashScreen from 'expo-splash-screen';
+import { useEffect } from 'react';
+import 'react-native-reanimated';
 
-const RouteIcons = {
-  index: (props: Omit<ComponentProps<typeof Feather>, "name">) => (
-    <Feather {...props} name="home" />
-  ),
-  search: (props: Omit<ComponentProps<typeof Feather>, "name">) => (
-    <Feather {...props} name="search" />
-  ),
-  library: (props: Omit<ComponentProps<typeof Feather>, "name">) => (
-    <Ionicons {...props} name="library-outline" />
-  ),
-} as const
+import { useColorScheme } from '@/hooks/useColorScheme';
+
+// Prevent the splash screen from auto-hiding before asset loading is complete.
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const colorScheme = useColorScheme();
+  const [loaded] = useFonts({
+    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+  });
+
+  useEffect(() => {
+    if (loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded]);
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <Tabs
-      sceneContainerStyle={{ maxWidth: 1200 }}
-      screenOptions={({ route }) => ({
-        tabBarShowLabel: true,
-        headerShown: false,
-        tabBarStyle: {},
-        tabBarIcon: ({ focused, color, size }) => {
-          const Icon = RouteIcons[route.name as keyof typeof RouteIcons]
-          return <Icon color={color} size={size} />
-        },
-        tabBarActiveTintColor: "blue",
-        tabBarIconStyle: { flexDirection: "column" },
-      })}
-    >
-      <Tabs.Screen name="index" />
-      <Tabs.Screen name="search" />
-      <Tabs.Screen name="library" />
-    </Tabs>
-  )
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <Stack>
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="+not-found" />
+      </Stack>
+    </ThemeProvider>
+  );
 }
