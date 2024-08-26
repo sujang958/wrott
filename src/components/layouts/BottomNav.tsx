@@ -15,21 +15,21 @@ const BottomNav: FC = () => {
         <div className="border-l border-neutral-200">&nbsp;</div>
         <Link
           href="/"
-          className="flex flex-row justify-center items-center py-2 px-6 w-24 rounded-lg bg-neutral-200/80"
+          className="flex flex-row justify-center items-center p-2 w-20 rounded-lg bg-neutral-200/70"
         >
           <p className="text-xs font-medium">홈</p>
         </Link>
-        <div className="border-l border-neutral-200">&nbsp;</div>
+        <div className="border-r border-neutral-200">&nbsp;</div>
         <Link
           href="/"
-          className="flex flex-row justify-center items-center py-2 px-6 w-24 rounded-lg"
+          className="flex flex-row justify-center items-center p-2 w-20 rounded-lg"
         >
           <p className="text-xs font-medium">검색</p>
         </Link>
         <div className="border-l border-neutral-200">&nbsp;</div>
         <Link
           href="/"
-          className="flex flex-row justify-center items-center py-2 px-6 w-24 rounded-lg"
+          className="flex flex-row justify-center items-center p-2 w-20 rounded-lg"
         >
           <p className="text-xs font-medium">내 서재</p>
         </Link>

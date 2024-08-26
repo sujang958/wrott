@@ -1,7 +1,12 @@
+import Container from "@/components/layouts/Container"
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p className="text-xl font-semibold">탐색하기</p>
-    </main>
-  );
+    <Container>
+      <p className="text-3xl font-semibold">탐색하기</p>
+      <p className="mt-8 text-base font-medium">인기있는 글</p>
+      <p className="mt-8 text-base font-medium">분류별 글</p>
+      <p className="mt-8 text-base font-medium">새로운 글</p>
+    </Container>
+  )
 }
