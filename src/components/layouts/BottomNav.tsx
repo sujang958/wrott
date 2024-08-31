@@ -10,7 +10,7 @@ const BottomNav: FC = () => {
           <p className="absolute -top-6 -left-4 w-max text-xs z-10 bg-white rounded px-1 py-0.5 shadow-lg translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 duration-200 transition">
             Wrott 소개
           </p>
-          <Image src="/favicon.png" alt="Logo" width={32} height={32} />
+          <Image src="/favicon.png" alt="Logo" width={24} height={24} />
         </Link>
         <div className="border-l border-neutral-200">&nbsp;</div>
         <Link
