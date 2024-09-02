@@ -1,8 +1,13 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import { FC } from "react"
 
 const BottomNav: FC = () => {
+  const pathname = usePathname()
+
   return (
     <nav className="flex flex-col items-center fixed bottom-4 right-0 left-0">
       <div className="flex flex-row items-center gap-x-4 rounded-lg bg-neutral-50 px-2 py-1">
@@ -15,21 +20,22 @@ const BottomNav: FC = () => {
         <div className="border-l border-neutral-200">&nbsp;</div>
         <Link
           href="/"
-          className="flex flex-row justify-center items-center p-2 w-20 rounded-lg bg-neutral-200/70"
+          className={`${pathname == "/" ? "bg-neutral-200/70" : ""} flex flex-row justify-center items-center p-2 w-20 rounded-lg`}
         >
           <p className="text-xs font-medium">홈</p>
         </Link>
         <div className="border-r border-neutral-200">&nbsp;</div>
         <Link
-          href="/"
-          className="flex flex-row justify-center items-center p-2 w-20 rounded-lg"
+          href="/search"
+          className={`${pathname == "/search" ? "bg-neutral-200/70" : ""} flex flex-row justify-center items-center p-2 w-20 rounded-lg`}
         >
           <p className="text-xs font-medium">검색</p>
         </Link>
         <div className="border-l border-neutral-200">&nbsp;</div>
+        {/* TODO: user name dynamic */}
         <Link
           href="/"
-          className="flex flex-row justify-center items-center p-2 w-20 rounded-lg"
+          className={`${pathname == "/asdfasf" ? "bg-neutral-200/70" : ""} flex flex-row justify-center items-center p-2 w-20 rounded-lg`}
         >
           <p className="text-xs font-medium">내 서재</p>
         </Link>
