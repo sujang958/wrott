@@ -20,22 +20,22 @@ const BottomNav: FC = () => {
         <div className="border-l border-neutral-200">&nbsp;</div>
         <Link
           href="/"
-          className={`${pathname == "/" ? "bg-neutral-200/70" : ""} flex flex-row justify-center items-center p-2 w-20 rounded-lg`}
+          className={`${pathname == "/" ? "bg-neutral-200/70" : ""} flex flex-row justify-center items-center p-2 w-24 rounded-lg`}
         >
           <p className="text-xs font-medium">홈</p>
         </Link>
         <div className="border-r border-neutral-200">&nbsp;</div>
         <Link
           href="/search"
-          className={`${pathname == "/search" ? "bg-neutral-200/70" : ""} flex flex-row justify-center items-center p-2 w-20 rounded-lg`}
+          className={`${pathname == "/search" ? "bg-neutral-200/70" : ""} flex flex-row justify-center items-center p-2 w-24 rounded-lg`}
         >
           <p className="text-xs font-medium">검색</p>
         </Link>
         <div className="border-l border-neutral-200">&nbsp;</div>
         {/* TODO: user name dynamic */}
         <Link
-          href="/"
-          className={`${pathname == "/asdfasf" ? "bg-neutral-200/70" : ""} flex flex-row justify-center items-center p-2 w-20 rounded-lg`}
+          href="/@me"
+          className={`${pathname == "/@me" ? "bg-neutral-200/70" : ""} flex flex-row justify-center items-center p-2 w-24 rounded-lg`}
         >
           <p className="text-xs font-medium">내 서재</p>
         </Link>
